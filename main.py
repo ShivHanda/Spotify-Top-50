@@ -4,15 +4,32 @@ import pandas as pd
 from datetime import datetime
 import os
 
-# Secrets (Ye hum GitHub Settings me dalenge)
-CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
-CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
+# --- DEBUGGING START ---
+# Ye check karega ki Secrets sahi load ho rahe hain ya nahi
+client_id = os.environ.get('SPOTIPY_CLIENT_ID', '')
+client_secret = os.environ.get('SPOTIPY_CLIENT_SECRET', '')
+
+print(f"DEBUG CHECK:")
+print(f"PLAYLIST_ID used: '37i9dQZEVXbMDoHDwVN2tF'")
+print(f"Client ID Length: {len(client_id)} (Should be 32)")
+print(f"Client Secret Length: {len(client_secret)} (Should be 32)")
+
+if len(client_id) > 32:
+    print("❌ ERROR: Client ID me koi lamba Link/Text paste ho gaya hai!")
+if 'http' in client_id or 'http' in client_secret:
+    print("❌ ERROR: Secrets me 'http' link detect hua hai. Please remove it.")
+# --- DEBUGGING END ---
+
+# Original Logic
+CLIENT_ID = client_id
+CLIENT_SECRET = client_secret
 PLAYLIST_ID = '37i9dQZEVXbMDoHDwVN2tF'
-FILE_NAME = 'spotify_history.csv' # Simple filename, no C:/ path
+FILE_NAME = 'spotify_history.csv'
 
 auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
+# Baki code same rahega...
 results = sp.playlist(PLAYLIST_ID)
 tracks = results['tracks']['items']
 current_date = datetime.now().strftime("%Y-%m-%d")
