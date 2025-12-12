@@ -5,7 +5,7 @@ import os
 import base64
 
 # ==========================================
-# 🛡️ ROBUST SETUP: Official Spotify Endpoints
+# 🛑 CORRECT OFFICIAL URLS (NO PROXY/GOOGLE LINKS)
 # ==========================================
 
 CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
@@ -14,8 +14,8 @@ PLAYLIST_ID = '37i9dQZEVXbMDoHDwVN2tF'
 FILE_NAME = 'spotify_history.csv'
 
 def get_access_token(client_id, client_secret):
-    """Spotify se Official Token maangne ka function"""
-    # ⬇️ CORRECT URL: Ye Spotify ka asli darwaza hai
+    """Spotify se Token lene ka function"""
+    # 👇 YAHAN GALTI THI. Ye hai sahi URL:
     auth_url = 'https://accounts.spotify.com/api/token'
     
     auth_header = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
@@ -31,12 +31,15 @@ def get_access_token(client_id, client_secret):
 
 def get_playlist_data(token, playlist_id):
     """Playlist fetch karne ka function"""
-    # ⬇️ CORRECT URL: Ye API ka asli address hai
+    # 👇 YAHAN BHI GALTI THI. Ye hai sahi URL:
     api_url = f'https://api.spotify.com/v1/playlists/{playlist_id}'
     
     headers = {'Authorization': f'Bearer {token}'}
     
-    response = requests.get(api_url, headers=headers)
+    # Market='US' add kiya hai taaki availability ka issue na aaye
+    params = {'market': 'US'} 
+    
+    response = requests.get(api_url, headers=headers, params=params)
     
     if response.status_code != 200:
         raise Exception(f"❌ Playlist Fetch Failed! Status: {response.status_code}, Msg: {response.text}")
@@ -60,9 +63,17 @@ try:
 
     data_list = []
     for i, item in enumerate(tracks):
+        # Kabhi kabhi track null hota hai, uske liye safety check
+        if item['track'] is None:
+            continue
+            
         track = item['track']
-        # Safe extraction handles missing images/albums
-        album_img = track['album']['images'][0]['url'] if track['album']['images'] else ""
+        
+        # Album image safety check
+        if track['album']['images']:
+            album_img = track['album']['images'][0]['url']
+        else:
+            album_img = ""
         
         row = {
             'Date': current_date,
