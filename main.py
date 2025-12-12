@@ -1,73 +1,47 @@
 import os
 import sys
-import base64
-import requests
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 import pandas as pd
 from datetime import datetime
 
-# --- Configuration & Constants ---
-CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
-CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
+# --- Configuration ---
+# Spotipy automatically looks for SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET 
+# in your environment variables, so we don't even need to pass them explicitly.
+
 PLAYLIST_ID = '37i9dQZEVXbMDoHDwVN2tF'  # Global Top 50
 OUTPUT_FILE = 'spotify_history.csv'
 
-# Official Spotify Endpoints
-AUTH_URL = 'https://accounts.spotify.com/api/token'
-API_BASE_URL = 'https://api.spotify.com/v1/playlists/'
+def main():
+    print("--- Starting Spotify Archiver (Spotipy Version) ---")
 
-def get_access_token():
-    """Authenticates with Spotify using Client Credentials Flow."""
-    if not CLIENT_ID or not CLIENT_SECRET:
-        print("Error: Environment variables SPOTIPY_CLIENT_ID or SPOTIPY_CLIENT_SECRET are missing.")
-        sys.exit(1)
-
-    # Encode Client ID and Secret
-    auth_str = f'{CLIENT_ID}:{CLIENT_SECRET}'
-    b64_auth_str = base64.b64encode(auth_str.encode()).decode()
-
-    headers = {
-        'Authorization': f'Basic {b64_auth_str}',
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    data = {'grant_type': 'client_credentials'}
-
+    # 1. Authenticate
+    # This single line handles the entire auth flow
     try:
-        response = requests.post(AUTH_URL, headers=headers, data=data)
-        response.raise_for_status()
-        return response.json()['access_token']
-    except requests.exceptions.RequestException as e:
-        print(f"Authentication Failed: {e}")
+        auth_manager = SpotifyClientCredentials()
+        sp = spotipy.Spotify(auth_manager=auth_manager)
+    except Exception as e:
+        print(f"Authentication Error: {e}")
         sys.exit(1)
 
-def fetch_playlist_data(token):
-    """Fetches tracks from the specific playlist."""
-    headers = {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json'
-    }
-    
-    # We ask for specific fields to optimize the payload
-    url = f"{API_BASE_URL}{PLAYLIST_ID}"
-    
+    # 2. Fetch Playlist Data
     try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        print(f"API Request Failed: {e}")
+        # We use playlist_tracks to get just the tracks pagination object
+        # limit=50 ensures we get the top 50
+        results = sp.playlist_tracks(PLAYLIST_ID, limit=50)
+    except Exception as e:
+        print(f"API Fetch Error: {e}")
         sys.exit(1)
 
-def process_data(data):
-    """Extracts required columns from the JSON response."""
+    # 3. Process Data
     tracks_list = []
     today_date = datetime.now().strftime('%Y-%m-%d')
     
-    # Check if 'tracks' and 'items' exist
-    if 'tracks' not in data or 'items' not in data['tracks']:
-        print("Error: Unexpected JSON structure.")
+    if 'items' not in results:
+        print("Error: No items found in playlist.")
         sys.exit(1)
 
-    for idx, item in enumerate(data['tracks']['items']):
+    for idx, item in enumerate(results['items']):
         track = item.get('track')
         if not track:
             continue
@@ -94,52 +68,28 @@ def process_data(data):
             'Album_Cover_URL': cover_url
         }
         tracks_list.append(track_data)
-        
-    return pd.DataFrame(tracks_list)
-
-def update_csv(new_df):
-    """Updates the CSV file, preventing duplicate dates."""
-    today_date = datetime.now().strftime('%Y-%m-%d')
-
+    
+    # 4. Save to CSV
+    new_df = pd.DataFrame(tracks_list)
+    
     if os.path.exists(OUTPUT_FILE):
         try:
-            # Check existing dates without loading the whole file if possible, 
-            # but for safety/simplicity with pandas we load headers or unique dates.
-            # Here we load the file to ensure schema consistency.
             existing_df = pd.read_csv(OUTPUT_FILE)
             
-            # Check if today's date already exists
+            # Check if today's date is already there
             if today_date in existing_df['Date'].astype(str).values:
-                print(f"Skipping: Data for {today_date} already exists in {OUTPUT_FILE}.")
-                return
+                print(f"Skipping: Data for {today_date} already exists.")
             else:
-                # Append without writing header
                 new_df.to_csv(OUTPUT_FILE, mode='a', header=False, index=False)
                 print(f"Success: Appended {len(new_df)} rows for {today_date}.")
         except Exception as e:
-            print(f"Error reading/writing CSV: {e}")
+            print(f"Error updating CSV: {e}")
             sys.exit(1)
     else:
-        # Create new file with headers
         new_df.to_csv(OUTPUT_FILE, mode='w', header=True, index=False)
-        print(f"Success: Created {OUTPUT_FILE} with {len(new_df)} rows for {today_date}.")
+        print(f"Success: Created {OUTPUT_FILE} with {len(new_df)} rows.")
 
-def main():
-    print("--- Starting Spotify Archiver ---")
-    
-    # 1. Authenticate
-    token = get_access_token()
-    
-    # 2. Fetch Data
-    raw_data = fetch_playlist_data(token)
-    
-    # 3. Process Data
-    df = process_data(raw_data)
-    
-    # 4. Save to CSV
-    update_csv(df)
-    
-    print("--- Process Completed Successfully ---")
+    print("--- Process Completed ---")
 
 if __name__ == "__main__":
     main()
