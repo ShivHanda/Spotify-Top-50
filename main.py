@@ -5,10 +5,8 @@ import os
 import base64
 
 # ==========================================
-# 🛡️ ROBUST SETUP: Direct API (No Spotipy)
+# 🛡️ ROBUST SETUP: Official Spotify Endpoints
 # ==========================================
-# Ye method Spotipy library ko bypass karke direct Spotify se baat karega.
-# Isse "googleusercontent" wala error aana impossible hai.
 
 CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
@@ -16,8 +14,10 @@ PLAYLIST_ID = '37i9dQZEVXbMDoHDwVN2tF'
 FILE_NAME = 'spotify_history.csv'
 
 def get_access_token(client_id, client_secret):
-    """Spotify se directly Token maangne ka function"""
+    """Spotify se Official Token maangne ka function"""
+    # ⬇️ CORRECT URL: Ye Spotify ka asli darwaza hai
     auth_url = 'https://accounts.spotify.com/api/token'
+    
     auth_header = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
     headers = {'Authorization': f'Basic {auth_header}'}
     data = {'grant_type': 'client_credentials'}
@@ -25,13 +25,15 @@ def get_access_token(client_id, client_secret):
     response = requests.post(auth_url, headers=headers, data=data)
     
     if response.status_code != 200:
-        raise Exception(f"❌ Auth Failed! Check Client ID/Secret. Status: {response.status_code}, Msg: {response.text}")
+        raise Exception(f"❌ Auth Failed! Status: {response.status_code}, Msg: {response.text}")
     
     return response.json()['access_token']
 
 def get_playlist_data(token, playlist_id):
     """Playlist fetch karne ka function"""
+    # ⬇️ CORRECT URL: Ye API ka asli address hai
     api_url = f'https://api.spotify.com/v1/playlists/{playlist_id}'
+    
     headers = {'Authorization': f'Bearer {token}'}
     
     response = requests.get(api_url, headers=headers)
@@ -43,7 +45,7 @@ def get_playlist_data(token, playlist_id):
 
 # --- MAIN EXECUTION ---
 try:
-    print("🚀 Starting Direct API Connection...")
+    print("🚀 Starting Connection to OFFICIAL Spotify API...")
     
     # Step 1: Get Token
     token = get_access_token(CLIENT_ID, CLIENT_SECRET)
