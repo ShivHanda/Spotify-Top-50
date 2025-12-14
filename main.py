@@ -12,7 +12,7 @@ CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 CSV_FILE = 'spotify_history.csv'
 
 def get_access_token():
-    """Spotify se Login Token leta hai (Client Credentials Flow)."""
+    """Spotify Auth (Client Credentials)."""
     auth_url = 'https://accounts.spotify.com/api/token'
     auth_str = f"{CLIENT_ID}:{CLIENT_SECRET}"
     b64_auth_str = base64.b64encode(auth_str.encode()).decode()
@@ -33,30 +33,45 @@ def get_access_token():
 
 def scrape_top_50_ids():
     """
-    Kworb.net se Global Top 50 songs ki Spotify IDs churata hai.
-    Kyunki Spotify API ne direct playlist access block kar diya hai.
+    Fail-Safe Scraper: Looks for ANY link containing '/track/' 
+    instead of relying on a specific table structure.
     """
     url = "https://kworb.net/spotify/country/global_daily.html"
     print(f"Scraping Top 50 IDs from {url}...")
     
     try:
-        response = requests.get(url)
+        # User-Agent header is often required to avoid 403 blocks
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
+        
         soup = BeautifulSoup(response.content, 'html.parser')
         
         track_ids = []
-        rows = soup.select('table.sortable tbody tr')
         
-        for row in rows[:50]: # Sirf Top 50 chahiye
-            link_tag = row.find('a', href=True)
-            # URL structure: .../track/TRACK_ID.html
-            if link_tag and '/track/' in link_tag['href']:
-                full_href = link_tag['href']
-                track_id = full_href.split('/track/')[1].replace('.html', '')
-                track_ids.append(track_id)
+        # Robust Strategy: Find ALL links that look like a Spotify track
+        all_links = soup.find_all('a', href=True)
+        
+        for link in all_links:
+            href = link['href']
+            # Kworb links usually look like: ../track/12345ID.html
+            if '/track/' in href:
+                # Extract the ID part
+                # Example: ../track/4Dvkj6JhhA12EX05fT7y2e.html -> 4Dvkj6JhhA12EX05fT7y2e
+                parts = href.split('/track/')
+                if len(parts) > 1:
+                    clean_id = parts[1].replace('.html', '').strip()
+                    if clean_id not in track_ids: # Avoid duplicates
+                        track_ids.append(clean_id)
+            
+            if len(track_ids) >= 50:
+                break
         
         if not track_ids:
-            raise Exception("Kworb se IDs nahi mili. Structure change ho gaya hoga.")
+            # Fallback debug
+            print("Debug: No links found with '/track/'. Page content preview:")
+            print(soup.prettify()[:500])
+            raise Exception("Kworb scraping failed. No track IDs found.")
             
         print(f"Successfully scraped {len(track_ids)} track IDs.")
         return track_ids
@@ -66,12 +81,10 @@ def scrape_top_50_ids():
         sys.exit(1)
 
 def get_tracks_metadata(token, track_ids):
-    """
-    In IDs ke liye Spotify se official details mangta hai.
-    Ye endpoint (v1/tracks) allowed hai.
-    """
-    ids_string = ",".join(track_ids)
-    url = f"https://api.spotify.com/v1/tracks?ids={ids_string}"
+    """Fetch metadata from Spotify API."""
+    # Spotify allows max 50 IDs per request
+    ids_string = ",".join(track_ids[:50])
+    url = f"https://api.spotify.com/v1/tracks?ids={ids_string}" # Use official endpoint
     headers = {'Authorization': f'Bearer {token}'}
     
     try:
@@ -87,7 +100,7 @@ def process_data():
         print("Error: Secrets missing. Github Settings check karein.")
         sys.exit(1)
 
-    # 1. Scrape IDs (Jugaad to bypass Ban)
+    # 1. Scrape IDs
     track_ids = scrape_top_50_ids()
 
     # 2. Login
@@ -105,10 +118,7 @@ def process_data():
         if not track:
             continue
             
-        # Artists ke naam combine karna
         artists = ", ".join([artist['name'] for artist in track.get('artists', [])])
-        
-        # Album Cover URL
         album_images = track.get('album', {}).get('images', [])
         cover_url = album_images[0]['url'] if album_images else None
 
@@ -129,12 +139,12 @@ def process_data():
 
     new_df = pd.DataFrame(extracted_data)
 
-    # 4. Save Logic (Duplicate Check)
+    # 4. Save Logic
     if os.path.exists(CSV_FILE):
         try:
             existing_df = pd.read_csv(CSV_FILE)
             if today_date in existing_df['Date'].values:
-                print(f"Aaj ({today_date}) ka data pehle se hai. Kuch nahi kiya.")
+                print(f"Aaj ({today_date}) ka data pehle se hai.")
                 sys.exit(0)
             
             updated_df = pd.concat([existing_df, new_df], ignore_index=True)
