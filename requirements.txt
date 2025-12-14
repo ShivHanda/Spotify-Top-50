@@ -1,2 +1,4 @@
 pandas
 spotipy
+requests
+beautifulsoup4
