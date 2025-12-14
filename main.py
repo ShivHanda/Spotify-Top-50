@@ -138,6 +138,8 @@ def process_data():
         extracted_data.append(row)
 
     new_df = pd.DataFrame(extracted_data)
+    new_df['Release_Date'] = pd.to_datetime(new_df['Release_Date'])
+    new_df['Release_Date'] = new_df['Release_Date'].dt.strftime('%Y-%m-%d')
 
     # 4. Save Logic
     if os.path.exists(CSV_FILE):
