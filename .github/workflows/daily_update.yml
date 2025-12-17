@@ -2,7 +2,7 @@ name: Daily Spotify Top 50 Archive
 
 on:
   schedule:
-    - cron: '0 23 * * *' # Roz raat 11 baje (UTC)
+    - cron: '30 1 * * *' # Roz raat 11 baje (UTC)
   workflow_dispatch:
 
 jobs:
