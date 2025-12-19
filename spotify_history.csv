@@ -249,3 +249,53 @@ Date,Position,Song,Artist,Popularity,Duration_MS,Album_Type,Total_Tracks,Release
 2025-12-18,48,I Wanna Be Yours,Arctic Monkeys,92,183956,album,12,2013-09-09,False,https://i.scdn.co/image/ab67616d0000b2734ae1c4c5c45aabe565499163
 2025-12-18,49,Yellow,Coldplay,92,266773,album,10,2000-07-10,False,https://i.scdn.co/image/ab67616d0000b2739164bafe9aaa168d93f4816a
 2025-12-18,50,Starboy,"The Weeknd, Daft Punk",91,230453,album,18,2016-11-25,True,https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452
+2025-12-19,1,The Fate of Ophelia,Taylor Swift,100,226073,album,12,2025-10-03,False,https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902
+2025-12-19,2,Last Christmas,Wham!,96,262960,single,3,1984-11-29,False,https://i.scdn.co/image/ab67616d0000b273f2d2adaa21ad616df6241e7d
+2025-12-19,3,All I Want for Christmas Is You,Mariah Carey,98,241562,album,10,1994-10-28,False,https://i.scdn.co/image/ab67616d0000b273c0862332847213b151ffab31
+2025-12-19,4,Rockin' Around The Christmas Tree,Brenda Lee,97,126266,album,12,1964-10-19,False,https://i.scdn.co/image/ab67616d0000b2737845f74d6db14b400fa61cd3
+2025-12-19,5,Jingle Bell Rock,Bobby Helms,94,130973,single,2,1957-12-02,False,https://i.scdn.co/image/ab67616d0000b273fd56f3c7a294f5cfe51c7b17
+2025-12-19,6,Santa Tell Me,Ariana Grande,95,204093,single,1,2014-11-24,False,https://i.scdn.co/image/ab67616d0000b273a1db745e63940bc06985dea5
+2025-12-19,7,Golden,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",98,194607,album,12,2025-06-20,False,https://i.scdn.co/image/ab67616d0000b2734dcb6c5df15cf74596ab25a4
+2025-12-19,8,Man I Need,Olivia Dean,97,184000,single,3,2025-08-15,False,https://i.scdn.co/image/ab67616d0000b273e3d69e17dde129037a1f09e2
+2025-12-19,9,back to friends,sombr,93,199032,single,1,2024-12-27,False,https://i.scdn.co/image/ab67616d0000b2739d24f74c1e2d8a12b1e591ec
+2025-12-19,10,Snowman,Sia,94,165900,album,13,2018-11-01,False,https://i.scdn.co/image/ab67616d0000b273e8b11389352ddae61df3a93b
+2025-12-19,11,Underneath the Tree,Kelly Clarkson,92,229638,album,16,2013-10-25,False,https://i.scdn.co/image/ab67616d0000b273c87992b7588879f66d192905
+2025-12-19,12,Let It Snow! Let It Snow! Let It Snow!,Dean Martin,94,117146,album,12,1959-01-01,False,https://i.scdn.co/image/ab67616d0000b2736d88028a85c771f37374c8ea
+2025-12-19,13,It's the Most Wonderful Time of the Year,Andy Williams,82,151000,album,12,1963-01-01,False,https://i.scdn.co/image/ab67616d0000b273585897779cf3591ba0f07650
+2025-12-19,14,WHERE IS MY HUSBAND!,RAYE,95,196795,single,1,2025-09-19,False,https://i.scdn.co/image/ab67616d0000b2737cc8cee5c81409833e540974
+2025-12-19,15,It's Beginning to Look a Lot like Christmas,Michael Bublé,86,206639,album,16,2011-10-24,False,https://i.scdn.co/image/ab67616d0000b27395517befb15ad5d63af701ab
+2025-12-19,16,So Easy (To Fall In Love),Olivia Dean,96,169000,album,12,2025-09-26,False,https://i.scdn.co/image/ab67616d0000b2739a336bfb6d40bbd90a507417
+2025-12-19,17,End of Beginning,Djo,94,159245,album,13,2022-09-16,False,https://i.scdn.co/image/ab67616d0000b273fddfffec51b4580acae727c1
+2025-12-19,18,Ordinary,Alex Warren,92,186964,album,11,2024-09-26,False,https://i.scdn.co/image/ab67616d0000b27342fe69c0e7e5c92f01ece8ce
+2025-12-19,19,Mistletoe,Justin Bieber,92,182946,album,15,2011-01-01,False,https://i.scdn.co/image/ab67616d0000b273af0aff7f601df9ed6d2d531d
+2025-12-19,20,Feliz Navidad,José Feliciano,79,182306,album,23,2001-01-01,False,https://i.scdn.co/image/ab67616d0000b27357db4e3ca6a227ed612ad0b8
+2025-12-19,21,CHANEL,Tyla,91,188059,single,1,2025-10-24,True,https://i.scdn.co/image/ab67616d0000b27336e063ca7f0b26f63515ca57
+2025-12-19,22,Holly Jolly Christmas,Michael Bublé,86,119786,album,16,2011-10-24,False,https://i.scdn.co/image/ab67616d0000b27395517befb15ad5d63af701ab
+2025-12-19,23,Sleigh Ride,The Ronettes,81,181266,compilation,15,2020-12-04,False,https://i.scdn.co/image/ab67616d0000b2731f0d5a8ff630fd5944c3936d
+2025-12-19,24,The Christmas Song (Merry Christmas To You),Nat King Cole,90,192160,album,19,1962-01-01,False,https://i.scdn.co/image/ab67616d0000b27330dc6027fd140c7ba68e900c
+2025-12-19,25,BIRDS OF A FEATHER,Billie Eilish,95,210373,album,10,2024-05-17,False,https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62
+2025-12-19,26,Die With A Smile,"Lady Gaga, Bruno Mars",92,251667,single,1,2024-08-16,False,https://i.scdn.co/image/ab67616d0000b27382ea2e9e1858aa012c57cd45
+2025-12-19,27,Cuando No Era Cantante,"El Bogueto, Yung Beef",91,211084,album,23,2024-09-26,True,https://i.scdn.co/image/ab67616d0000b27315110c9ad66e065592cc3496
+2025-12-19,28,Opalite,Taylor Swift,95,235355,album,12,2025-10-03,False,https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902
+2025-12-19,29,Every Breath You Take,The Police,93,253920,album,11,1983-06-17,False,https://i.scdn.co/image/ab67616d0000b273c8e97cafeb2acb85b21a777e
+2025-12-19,30,Iris,The Goo Goo Dolls,93,289533,album,13,1998-01-01,False,https://i.scdn.co/image/ab67616d0000b273eda9478c39a21e1cdc6609ca
+2025-12-19,31,BAILE INoLVIDABLE,Bad Bunny,92,367725,album,17,2025-01-05,True,https://i.scdn.co/image/ab67616d0000b273bbd45c8d36e0e045ef640411
+2025-12-19,32,DtMF,Bad Bunny,93,237117,album,17,2025-01-05,True,https://i.scdn.co/image/ab67616d0000b273bbd45c8d36e0e045ef640411
+2025-12-19,33,Sailor Song,Gigi Perez,88,211978,single,1,2024-07-26,False,https://i.scdn.co/image/ab67616d0000b273e6065f209e0a01986206bd53
+2025-12-19,34,Christmas (Baby Please Come Home),Darlene Love,88,166453,compilation,15,2020-12-04,False,https://i.scdn.co/image/ab67616d0000b2734bd42504ca3569f71af64fc8
+2025-12-19,35,Don’t Say You Love Me,Jin,88,180716,album,7,2025-05-16,False,https://i.scdn.co/image/ab67616d0000b27389228504f700641956e29f5d
+2025-12-19,36,Sedia Aku Sebelum Hujan,Idgitaf,86,230130,single,1,2025-10-08,False,https://i.scdn.co/image/ab67616d0000b2738dc8c573565969d55f9f3477
+2025-12-19,37,Gabriela,KATSEYE,94,197226,single,2,2025-06-20,False,https://i.scdn.co/image/ab67616d0000b273f8d4d00ffe09373efb13ce29
+2025-12-19,38,La Perla,"ROSALÍA, Yahritza Y Su Esencia",93,195546,album,15,2025-11-07,True,https://i.scdn.co/image/ab67616d0000b27393ee2e2f2dfb7de9befcc164
+2025-12-19,39,Happy Xmas (War Is Over) - Remastered 2010,"John Lennon, Yoko Ono",91,214333,compilation,119,2010-10-05,False,https://i.scdn.co/image/ab67616d0000b27361a389971d7842d02b0623ab
+2025-12-19,40,Cuando No Era Cantante - Remix,"El Bogueto, Anuel AA, Fuerza Regida, Yung Beef",81,327488,single,1,2025-12-10,True,https://i.scdn.co/image/ab67616d0000b27376ca2bb969e79a911090df63
+2025-12-19,41,"One Of The Girls (with JENNIE, Lily Rose Depp)","The Weeknd, JENNIE, Lily-Rose Depp",93,244684,single,3,2023-06-23,False,https://i.scdn.co/image/ab67616d0000b273b0dd6a5cd1dec96c4119c262
+2025-12-19,42,Wonderful Christmastime - Edited Version / Remastered 2011,Paul McCartney,90,227653,album,19,1980-05-16,False,https://i.scdn.co/image/ab67616d0000b2733cef016d13d82873d45af84a
+2025-12-19,43,Sweater Weather,The Neighbourhood,93,240400,album,11,2013-04-22,False,https://i.scdn.co/image/ab67616d0000b2738265a736a1eb838ad5a0b921
+2025-12-19,44,Creep,Radiohead,92,238640,album,12,1993-02-22,True,https://i.scdn.co/image/ab67616d0000b273ec548c00d3ac2f10be73366d
+2025-12-19,45,Who,Jimin,87,170887,album,7,2024-07-19,False,https://i.scdn.co/image/ab67616d0000b273f02c451189a709b9a952aaec
+2025-12-19,46,WILDFLOWER,Billie Eilish,93,261466,album,10,2024-05-17,False,https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62
+2025-12-19,47,No Broke Boys,"Disco Lines, Tinashe",93,163994,single,1,2025-06-06,True,https://i.scdn.co/image/ab67616d0000b2735dcede7ece7b2cb72cee4eee
+2025-12-19,48,Posso Até Não Te Dar Flores,"DJ Japa NK, MC Meno K, MC Ryan SP, Mc Jacaré, DJ DAVI DOGDOG",92,158769,single,1,2025-09-11,True,https://i.scdn.co/image/ab67616d0000b27303965d16104282739d6e0a58
+2025-12-19,49,I Wanna Be Yours,Arctic Monkeys,92,183956,album,12,2013-09-09,False,https://i.scdn.co/image/ab67616d0000b2734ae1c4c5c45aabe565499163
+2025-12-19,50,The Night We Met,Lord Huron,91,208211,album,14,2015-04-06,False,https://i.scdn.co/image/ab67616d0000b27317875a0610c23d8946454583
