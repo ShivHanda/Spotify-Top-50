@@ -499,3 +499,53 @@ Date,Position,Song,Artist,Popularity,Duration_MS,Album_Type,Total_Tracks,Release
 2025-12-23,48,Gabriela,KATSEYE,93,197226,single,2,2025-06-20,False,https://i.scdn.co/image/ab67616d0000b273f8d4d00ffe09373efb13ce29
 2025-12-23,49,Iris,The Goo Goo Dolls,93,289533,album,13,1998-01-01,False,https://i.scdn.co/image/ab67616d0000b273eda9478c39a21e1cdc6609ca
 2025-12-23,50,Let It Snow! Let It Snow! Let It Snow! (with The B. Swanson Quartet),"Frank Sinatra, B. Swanson Quartet",88,155453,compilation,14,1994-11-08,False,https://i.scdn.co/image/ab67616d0000b2739457e3a848ca8bc8270f6057
+2025-12-24,1,Last Christmas,Wham!,98,262960,single,3,1984-11-29,False,https://i.scdn.co/image/ab67616d0000b273f2d2adaa21ad616df6241e7d
+2025-12-24,2,All I Want for Christmas Is You,Mariah Carey,99,241562,album,10,1994-10-28,False,https://i.scdn.co/image/ab67616d0000b273c0862332847213b151ffab31
+2025-12-24,3,Rockin' Around The Christmas Tree,Brenda Lee,98,126266,album,12,1964-10-19,False,https://i.scdn.co/image/ab67616d0000b2737845f74d6db14b400fa61cd3
+2025-12-24,4,The Fate of Ophelia,Taylor Swift,100,226073,album,12,2025-10-03,False,https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902
+2025-12-24,5,Jingle Bell Rock,Bobby Helms,96,130973,single,2,1957-12-02,False,https://i.scdn.co/image/ab67616d0000b273fd56f3c7a294f5cfe51c7b17
+2025-12-24,6,Santa Tell Me,Ariana Grande,96,204093,single,1,2014-11-24,False,https://i.scdn.co/image/ab67616d0000b273a1db745e63940bc06985dea5
+2025-12-24,7,Let It Snow! Let It Snow! Let It Snow!,Dean Martin,95,117146,album,12,1959-01-01,False,https://i.scdn.co/image/ab67616d0000b2736d88028a85c771f37374c8ea
+2025-12-24,8,Snowman,Sia,95,165900,album,13,2018-11-01,False,https://i.scdn.co/image/ab67616d0000b273e8b11389352ddae61df3a93b
+2025-12-24,9,Underneath the Tree,Kelly Clarkson,93,229638,album,16,2013-10-25,False,https://i.scdn.co/image/ab67616d0000b273c87992b7588879f66d192905
+2025-12-24,10,It's the Most Wonderful Time of the Year,Andy Williams,83,151000,album,12,1963-01-01,False,https://i.scdn.co/image/ab67616d0000b273585897779cf3591ba0f07650
+2025-12-24,11,Golden,"HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",98,194607,album,12,2025-06-20,False,https://i.scdn.co/image/ab67616d0000b2734dcb6c5df15cf74596ab25a4
+2025-12-24,12,It's Beginning to Look a Lot like Christmas,Michael Bublé,87,206639,album,16,2011-10-24,False,https://i.scdn.co/image/ab67616d0000b27395517befb15ad5d63af701ab
+2025-12-24,13,Holly Jolly Christmas,Michael Bublé,88,119786,album,16,2011-10-24,False,https://i.scdn.co/image/ab67616d0000b27395517befb15ad5d63af701ab
+2025-12-24,14,Feliz Navidad,José Feliciano,80,182306,album,23,2001-01-01,False,https://i.scdn.co/image/ab67616d0000b27357db4e3ca6a227ed612ad0b8
+2025-12-24,15,Sleigh Ride,The Ronettes,83,181266,compilation,15,2020-12-04,False,https://i.scdn.co/image/ab67616d0000b2731f0d5a8ff630fd5944c3936d
+2025-12-24,16,Mistletoe,Justin Bieber,93,182946,album,15,2011-01-01,False,https://i.scdn.co/image/ab67616d0000b273af0aff7f601df9ed6d2d531d
+2025-12-24,17,Man I Need,Olivia Dean,97,184000,single,3,2025-08-15,False,https://i.scdn.co/image/ab67616d0000b273e3d69e17dde129037a1f09e2
+2025-12-24,18,The Christmas Song (Merry Christmas To You),Nat King Cole,92,192160,album,19,1962-01-01,False,https://i.scdn.co/image/ab67616d0000b27330dc6027fd140c7ba68e900c
+2025-12-24,19,back to friends,sombr,93,199032,single,1,2024-12-27,False,https://i.scdn.co/image/ab67616d0000b2739d24f74c1e2d8a12b1e591ec
+2025-12-24,20,Happy Xmas (War Is Over) - Remastered 2010,"John Lennon, Yoko Ono",92,214333,compilation,119,2010-10-05,False,https://i.scdn.co/image/ab67616d0000b27361a389971d7842d02b0623ab
+2025-12-24,21,Christmas (Baby Please Come Home),Darlene Love,89,166453,compilation,15,2020-12-04,False,https://i.scdn.co/image/ab67616d0000b2734bd42504ca3569f71af64fc8
+2025-12-24,22,So Easy (To Fall In Love),Olivia Dean,96,169000,album,12,2025-09-26,False,https://i.scdn.co/image/ab67616d0000b2739a336bfb6d40bbd90a507417
+2025-12-24,23,WHERE IS MY HUSBAND!,RAYE,95,196795,single,1,2025-09-19,False,https://i.scdn.co/image/ab67616d0000b2737cc8cee5c81409833e540974
+2025-12-24,24,End of Beginning,Djo,94,159245,album,13,2022-09-16,False,https://i.scdn.co/image/ab67616d0000b273fddfffec51b4580acae727c1
+2025-12-24,25,Ordinary,Alex Warren,92,186964,album,11,2024-09-26,False,https://i.scdn.co/image/ab67616d0000b27342fe69c0e7e5c92f01ece8ce
+2025-12-24,26,CHANEL,Tyla,92,188059,single,1,2025-10-24,True,https://i.scdn.co/image/ab67616d0000b27336e063ca7f0b26f63515ca57
+2025-12-24,27,Wonderful Christmastime - Edited Version / Remastered 2011,Paul McCartney,92,227653,album,19,1980-05-16,False,https://i.scdn.co/image/ab67616d0000b2733cef016d13d82873d45af84a
+2025-12-24,28,Driving Home for Christmas - 2019 Remaster,Chris Rea,85,241626,album,28,1987-08-02,False,https://i.scdn.co/image/ab67616d0000b2736d621c2d5114cc41c96b376a
+2025-12-24,29,Merry Christmas Everyone,Shakin' Stevens,91,220160,album,13,1991-11-25,False,https://i.scdn.co/image/ab67616d0000b273d962f3b4235f8c6429a829fb
+2025-12-24,30,Every Breath You Take,The Police,93,253920,album,11,1983-06-17,False,https://i.scdn.co/image/ab67616d0000b273c8e97cafeb2acb85b21a777e
+2025-12-24,31,Do They Know It's Christmas? - 1984 Version,Band Aid,74,222533,single,2,2004-01-01,False,https://i.scdn.co/image/ab67616d0000b2732f77772e5c981e44fc347e22
+2025-12-24,32,BIRDS OF A FEATHER,Billie Eilish,95,210373,album,10,2024-05-17,False,https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62
+2025-12-24,33,Die With A Smile,"Lady Gaga, Bruno Mars",92,251667,single,1,2024-08-16,False,https://i.scdn.co/image/ab67616d0000b27382ea2e9e1858aa012c57cd45
+2025-12-24,34,White Christmas - 1947 Version,"Bing Crosby, Ken Darby Singers, John Scott Trotter & His Orchestra",91,183613,compilation,12,1945-01-01,False,https://i.scdn.co/image/ab67616d0000b2738004cd6b343732b0e1e666f5
+2025-12-24,35,Sailor Song,Gigi Perez,88,211978,single,1,2024-07-26,False,https://i.scdn.co/image/ab67616d0000b273e6065f209e0a01986206bd53
+2025-12-24,36,Please Come Home for Christmas - 2013 Remaster,Eagles,90,177440,single,2,1978-11-27,False,https://i.scdn.co/image/ab67616d0000b2736d4362a2b2e39422000f8ed3
+2025-12-24,37,DtMF,Bad Bunny,93,237117,album,17,2025-01-05,True,https://i.scdn.co/image/ab67616d0000b273bbd45c8d36e0e045ef640411
+2025-12-24,38,It's Beginning to Look a Lot Like Christmas (with Mitchell Ayres & His Orchestra),"Perry Como, The Fontane Sisters, Mitchell Ayres & His Orchestra",90,155933,album,21,1999-08-23,False,https://i.scdn.co/image/ab67616d0000b273d5f598be32d3027b9578ecd6
+2025-12-24,39,Lush Life,Zara Larsson,2,201122,single,1,2015-06-09,False,https://i.scdn.co/image/ab67616d0000b2736eaa0691ac9d790b41d21a91
+2025-12-24,40,Cuando No Era Cantante,"El Bogueto, Yung Beef",91,211084,album,23,2024-09-26,True,https://i.scdn.co/image/ab67616d0000b27315110c9ad66e065592cc3496
+2025-12-24,41,Step Into Christmas - Remastered 1995,Elton John,88,272333,album,14,1974-06-28,False,https://i.scdn.co/image/ab67616d0000b27368f5959744717483eed212b2
+2025-12-24,42,Iris,The Goo Goo Dolls,93,289533,album,13,1998-01-01,False,https://i.scdn.co/image/ab67616d0000b273eda9478c39a21e1cdc6609ca
+2025-12-24,43,"Carol of the Bells (From ""Home Alone"" Soundtrack)",John Williams,90,85266,album,19,1990-01-01,False,https://i.scdn.co/image/ab67616d0000b273f497846e25233023ca7cb8b1
+2025-12-24,44,Run Rudolph Run,Chuck Berry,90,165733,album,20,1986-01-01,False,https://i.scdn.co/image/ab67616d0000b27339807cff601735a3dec9e24c
+2025-12-24,45,Gabriela,KATSEYE,93,197226,single,2,2025-06-20,False,https://i.scdn.co/image/ab67616d0000b273f8d4d00ffe09373efb13ce29
+2025-12-24,46,BAILE INoLVIDABLE,Bad Bunny,93,367725,album,17,2025-01-05,True,https://i.scdn.co/image/ab67616d0000b273bbd45c8d36e0e045ef640411
+2025-12-24,47,"Santa, Can’t You Hear Me","Kelly Clarkson, Ariana Grande",89,242644,album,15,2021-10-15,False,https://i.scdn.co/image/ab67616d0000b2731fa667a7a53c7072fed91a17
+2025-12-24,48,Opalite,Taylor Swift,95,235355,album,12,2025-10-03,False,https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902
+2025-12-24,49,Sedia Aku Sebelum Hujan,Idgitaf,88,230130,single,1,2025-10-08,False,https://i.scdn.co/image/ab67616d0000b2738dc8c573565969d55f9f3477
+2025-12-24,50,Merry Christmas,"Ed Sheeran, Elton John",0,208546,album,15,2021-12-01,False,https://i.scdn.co/image/ab67616d0000b273442f8c48ad3cc14f1de383fd
